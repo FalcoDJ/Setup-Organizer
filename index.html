@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Organizer Tool</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b99781d0fe.js" crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Team Member Form -->
+    <div id="tm-info-edit" class="form">
+        <div class="inp-line-top">
+            <div style="display:inline;">Team Member Form</div><i class="fa-solid fa-square-xmark close-tm-f"></i>
+        </div>
+        <div class="inp-line">
+            <div class="field">Name: </div><input type='text' class="inp" id="tm-name">
+        </div>
+        <div class="inp-line">
+            <div class="field">Start: </div><input type="time" class="inp" id="tm-start">
+        </div>
+        <div class="inp-line">
+            <div class="field">End: </div><input type="time" class="inp" id="tm-end">
+        </div>
+        <div class="inp-line">
+            <div class="field">Minor: </div> <input type="checkbox" id="tm-minor" value="off">
+        </div>
+        <div class="space-between">
+            <button onclick="removeTM()" class="remove-btn row-btn">Remove</button>
+            <button id="submit-tm-data" class="submit-btn row-btn">Submit</button>
+        </div>
+    </div>
+    <!-- Tab Form -->
+    <div id="tab-edit" class="form">
+        <div class="inp-line-top">
+            <div style="display:inline;">Hour</div><i class="fa-solid fa-square-xmark close-tab-f"></i>
+        </div>
+        <div class="inp-line">
+            <div class="field">Hour: </div><input type='time' class="inp-hour">
+        </div>
+        <div class="space-between">
+            <button onclick="removeTab()" class="remove-btn row-btn">Remove</button>
+            <button id="submit-tab-data" class="submit-btn row-btn">Submit</button>
+        </div>
+    </div>
+    <!-- Row of Tabs -->
+    <div id="hour-tabs">
+        <div id="tab-directory">
+        </div>
+        <div class="filler">
+            <button class="box add-tab">
+                <i class="fa-solid fa-folder-plus"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Save Panel -->
+    <div id="save-panel">
+        <div class="file">
+            <h1>File</h1>
+        </div>
+        <div class="space-between" style="width: 50%;">
+            <button class="box" id="save-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="box" id="load-btn"><i class="fa-regular fa-folder-open"></i></button>
+        </div>
+    </div>
+    <!-- Panel of TMs -->
+    <div id="tm-bar">
+        <div class="bar-header">
+            <h1>Team Members</h1>
+        </div>
+        <div id="tm-directory"></div>
+        <button class="add box add-tm">
+            <i class="fa-solid fa-user-plus"></i>
+        </button>
+    </div>
+    <!-- Panel of JobsS -->
+    <div id="job-panel">
+        <div class="job-member space-between">NickName<button class="give-job"><i
+                    class="fa-solid fa-location-pin"></i></button></div>
+    </div>
+
+    <input type="file" name="json-grabber" id="json-grabber" accept=".json" style="display: none;">
+
+    <script src="js/main.js"></script>
+    <script src="js/set-tm-data.js"></script>
+    <script src="js/tab-handler.js"></script>
+    <script src="js/maths.js"></script>
+    <script src="js/save.js"></script>
+</body>
+
+</html>
